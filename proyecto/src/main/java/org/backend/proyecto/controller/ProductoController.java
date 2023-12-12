@@ -1,8 +1,6 @@
 package org.backend.proyecto.controller;
 
-import java.util.List;
-
-import jakarta.transaction.Transactional;
+import jakarta.validation.Valid;
 import org.backend.proyecto.dto.CreateProductoDTO;
 import org.backend.proyecto.dto.ProductoDTO;
 import org.backend.proyecto.dto.UpdateProductoDTO;
@@ -12,7 +10,8 @@ import org.backend.proyecto.service.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import jakarta.validation.Valid;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("productos")

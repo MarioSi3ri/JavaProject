@@ -1,8 +1,5 @@
 package org.backend.proyecto.service;
 
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 import org.backend.proyecto.dto.CreateProductoDTO;
 import org.backend.proyecto.dto.ProductoDTO;
 import org.backend.proyecto.dto.UpdateProductoDTO;
@@ -13,7 +10,8 @@ import org.backend.proyecto.model.TipoProducto;
 import org.backend.proyecto.repository.ProductoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.ResourceAccessException;
+
+import java.util.List;
 
 @Service
 public class ProductoService {
