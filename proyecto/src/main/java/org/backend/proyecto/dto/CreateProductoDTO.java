@@ -17,6 +17,9 @@ public class CreateProductoDTO {
 
     @NotNull
     private TipoProducto tipo;
+
+    @NotNull
+    private double precio;
 }
 
 /*

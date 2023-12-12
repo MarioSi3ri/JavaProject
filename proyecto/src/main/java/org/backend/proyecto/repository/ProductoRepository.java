@@ -1,15 +1,19 @@
 package org.backend.proyecto.repository;
 
-import java.util.List;
 import org.backend.proyecto.model.Producto;
+import org.backend.proyecto.model.TipoProducto;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public interface ProductoRepository extends CrudRepository<Producto, Long> {
 
     // Método para obtener todos los productos.
     List<Producto> findAll();
+
+    List<Producto> findByTipo(TipoProducto tipo);
 }
 
 /*
