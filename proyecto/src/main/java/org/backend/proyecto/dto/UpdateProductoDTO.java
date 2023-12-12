@@ -8,9 +8,9 @@ import lombok.Data;
 @Data
 public class UpdateProductoDTO {
 
-    @NotBlank
     private String nombre;
 
-    @NotNull
     private TipoProducto tipo;
+
+    private Double precio;
 }

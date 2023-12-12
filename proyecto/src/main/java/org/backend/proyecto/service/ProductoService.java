@@ -1,12 +1,15 @@
 package org.backend.proyecto.service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import org.backend.proyecto.dto.CreateProductoDTO;
 import org.backend.proyecto.dto.ProductoDTO;
 import org.backend.proyecto.dto.UpdateProductoDTO;
+import org.backend.proyecto.exception.ProductoNotFoundException;
 import org.backend.proyecto.mapper.ProductoMapper;
 import org.backend.proyecto.model.Producto;
+import org.backend.proyecto.model.TipoProducto;
 import org.backend.proyecto.repository.ProductoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,7 +27,11 @@ public class ProductoService {
     // Obtiene todos los productos y los convierte a DTOs.
     public List<ProductoDTO> findAllProductos() {
         List<Producto> productos = repository.findAll();
-        return productos.stream().map(mapper::toDTO).collect(Collectors.toList());
+        return productos.stream().map(mapper::toDTO).toList();
+    }
+
+    public ProductoDTO getProducto(long id) throws ProductoNotFoundException {
+        return mapper.toDTO(findProduct(id));
     }
 
     // Guarda un nuevo producto en la base de datos.
@@ -34,17 +41,26 @@ public class ProductoService {
     }
 
     // Actualiza un producto existente en la base de datos.
-    public ProductoDTO updateProducto(Long id, UpdateProductoDTO data) {
-        Producto entity = repository.findById(id)
-                .orElseThrow(() -> new ResourceAccessException("Producto no encontrado con el id: " + id));
-        entity = mapper.updateModelFromDTO(data, entity);
-        repository.save(entity);
-        return mapper.toDTO(entity);
+    public ProductoDTO updateProducto(Long id, UpdateProductoDTO data) throws ProductoNotFoundException {
+        Producto entity = repository.findById(id).orElseThrow(() -> new ProductoNotFoundException(id));
+
+        return mapper.toDTO(repository.save(mapper.updateModelFromDTO(entity, data)));
     }
 
     // Elimina un producto de la base de datos por su ID.
     public void deleteProducto(Long id) {
         repository.deleteById(id);
+    }
+
+    public Producto findProduct(long id) throws ProductoNotFoundException {
+        return repository.findById(id).orElseThrow(() -> new ProductoNotFoundException(id));
+    }
+
+    // Encuentra productos por el tipo de producto
+    public List<ProductoDTO> findProductosTipo(TipoProducto tipo) {
+        List<Producto> productos = repository.findByTipo(tipo);
+
+        return productos.stream().map(mapper::toDTO).toList();
     }
 }
 

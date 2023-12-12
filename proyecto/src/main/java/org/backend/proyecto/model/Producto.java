@@ -1,11 +1,7 @@
 package org.backend.proyecto.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Min;
 import lombok.Getter;
 import lombok.Setter;
@@ -33,8 +29,12 @@ public class Producto {
     private String nombre;
 
     // Tipo de producto (enum).
+    @Enumerated
     @Column(nullable = false)
     private TipoProducto tipo;
+
+    @Column(nullable = false)
+    private double precio;
 }
 
 /*
