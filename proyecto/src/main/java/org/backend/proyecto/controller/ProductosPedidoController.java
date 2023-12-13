@@ -35,6 +35,7 @@ public class ProductosPedidoController {
     // Mapea la solicitud DELETE para quitar un producto de un pedido
     @Operation(summary = "Se encarga de mapear la solicitud DELETE para quitar un producto de un pedido")
     @DeleteMapping("productos/{id}")
+    @Transactional
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void removeProducto(@PathVariable long id) throws ProductoNotFoundException {
         productosPedidoService.removeProducto(id);
