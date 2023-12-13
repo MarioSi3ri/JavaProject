@@ -1,5 +1,7 @@
 package org.backend.proyecto.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.backend.proyecto.dto.CreateProductoDTO;
 import org.backend.proyecto.dto.ProductoDTO;
@@ -12,7 +14,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@Tag(name = "Endpoints de Producto", description = "CRUD para los productos")
 @RestController
 @RequestMapping("productos")
 public class ProductoController {
@@ -21,6 +23,7 @@ public class ProductoController {
     private ProductoService service;
 
     // Mapea la solicitud GET a la lista de productos.
+    @Operation(summary = "Se encarga de mapear la solicitud GET a la lista de productos.")
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<ProductoDTO> getAllProductos() {
@@ -28,6 +31,7 @@ public class ProductoController {
     }
 
     // Mapea la solicitud GET de un producto específico
+    @Operation(summary = "Se encarga de mapear la solicitud GET de un producto específico.")
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public ProductoDTO getProducto(@PathVariable long id) throws ProductoNotFoundException {
@@ -35,6 +39,7 @@ public class ProductoController {
     }
 
     // Mapea la solicitud GET a la lista de productos de un tipo específico
+    @Operation(summary = "Se encarga de mapear la solicitud GET a la lista de productos de un tipo específico.")
     @GetMapping(params = "tipo")
     @ResponseStatus(HttpStatus.OK)
     public List<ProductoDTO> getProductosTipo(@RequestParam TipoProducto tipo) {
@@ -42,6 +47,7 @@ public class ProductoController {
     }
 
     // Mapea la solicitud POST para crear un nuevo producto.
+    @Operation(summary = "Se encarga de mapear la solicitud POST para crear un nuevo producto.")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public ProductoDTO createProducto(@Valid @RequestBody CreateProductoDTO data) {
@@ -49,6 +55,7 @@ public class ProductoController {
     }
 
     // Mapea la solicitud PUT para actualizar un producto existente.
+    @Operation(summary = "Se encarga de mapear la solicitud PUT para actualizar un producto existente.")
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public ProductoDTO updateProducto(@PathVariable Long id, @Valid @RequestBody UpdateProductoDTO data) throws ProductoNotFoundException {
@@ -56,6 +63,7 @@ public class ProductoController {
     }
 
     // Mapea la solicitud DELETE para eliminar un producto por su ID.
+    @Operation(summary = "Se encarga de mapear la solicitud DELETE para eliminar un producto por su ID.")
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteProducto(@PathVariable Long id) {
