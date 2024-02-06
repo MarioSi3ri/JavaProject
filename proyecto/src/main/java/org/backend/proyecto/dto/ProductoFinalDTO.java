@@ -3,7 +3,6 @@ package org.backend.proyecto.dto;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 
 @Data
 @NoArgsConstructor

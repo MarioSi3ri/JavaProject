@@ -12,6 +12,9 @@ import lombok.Setter;
 @Table(name = "productos_por_pedido")
 public class ProductosPedido {
 
+    public ProductosPedido(long l, long m, int k, double d) {
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;

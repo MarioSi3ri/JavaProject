@@ -39,6 +39,7 @@ public class ProductosPedidoService {
         double subTotal = producto.getPrecio() * dto.getCantidad();
 
         //Guarda la relación de producto y pedido en la db, tabla productos_por_pedido
+        @SuppressWarnings("null")
         ProductosPedido productosPedido = productosPedidoRepository
                 .save(productosPedidoMapper.toModel(
                         pedido.getId(),

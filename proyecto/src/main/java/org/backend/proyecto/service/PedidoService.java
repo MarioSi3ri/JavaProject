@@ -21,7 +21,7 @@ public class PedidoService {
 
     // Crea un nuevo pedido y lo activa
     public PedidoDTO createPedido() {
-        return pedidoMapper.toDto(pedidoRepository.save(new Pedido()));
+        return pedidoMapper.toDto(pedidoRepository.save(new Pedido(0, false, 0)));
     }
 
     // Busca en la db si hay algún pedido activo

@@ -34,11 +34,13 @@ public class ProductoService {
 
     // Guarda un nuevo producto en la base de datos.
     public ProductoDTO saveProducto(CreateProductoDTO data) {
+        @SuppressWarnings("null")
         Producto entity = repository.save(mapper.toModel(data));
         return mapper.toDTO(entity);
     }
 
     // Actualiza un producto existente en la base de datos.
+    @SuppressWarnings("null")
     public ProductoDTO updateProducto(Long id, UpdateProductoDTO data) throws ProductoNotFoundException {
         Producto entity = repository.findById(id).orElseThrow(() -> new ProductoNotFoundException(id));
 
@@ -46,6 +48,7 @@ public class ProductoService {
     }
 
     // Elimina un producto de la base de datos por su ID.
+    @SuppressWarnings("null")
     public void deleteProducto(Long id) {
         repository.deleteById(id);
     }

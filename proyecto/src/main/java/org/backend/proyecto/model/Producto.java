@@ -13,6 +13,9 @@ import lombok.ToString;
 @Table(name = "producto")
 public class Producto {
 
+    public Producto(long l, String string, TipoProducto comida, double d) {
+    }
+
     // Identificador (ID) del producto.
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

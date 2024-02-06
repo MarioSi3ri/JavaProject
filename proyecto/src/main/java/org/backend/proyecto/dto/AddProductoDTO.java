@@ -6,6 +6,12 @@ import lombok.Data;
 
 @Data
 public class AddProductoDTO {
+    public AddProductoDTO(long l, int i) {
+    }
+
+    public AddProductoDTO() {
+    }
+
     @Schema(description = "Id del producto", example = "21")
     @NotNull
     private Long id;

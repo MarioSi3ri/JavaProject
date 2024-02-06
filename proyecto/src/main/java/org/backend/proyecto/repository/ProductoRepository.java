@@ -11,6 +11,7 @@ import java.util.List;
 public interface ProductoRepository extends CrudRepository<Producto, Long> {
 
     // Método para obtener todos los productos.
+    @SuppressWarnings("null")
     List<Producto> findAll();
 
     List<Producto> findByTipo(TipoProducto tipo);
