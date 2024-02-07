@@ -1,6 +1,7 @@
 package org.backend.proyecto.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.DecimalMin;
 import org.backend.proyecto.model.TipoProducto;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -21,8 +22,8 @@ public class CreateProductoDTO {
     @NotNull
     private TipoProducto tipo;
 
-    @Schema(description = "Precio en precios mexicanos.", example = "21")
-    @NotNull
+    @Schema(description = "Precio en pesos mexicanos.", example = "21.59")
+    @DecimalMin("0.1")
     private double precio;
 }
 

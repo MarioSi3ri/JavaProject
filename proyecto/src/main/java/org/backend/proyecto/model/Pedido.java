@@ -21,12 +21,9 @@ public class Pedido {
     private double total;
 
     // Constructor sin argumentos que define valores default de total y activo
-    public Pedido(long l, boolean b, double d) {
+    public Pedido() {
         this.activo = true;
         this.total = 0.0;
-    }
-
-    public Pedido() {
     }
 
     // Método que desactiva el pedido y asigna el precio totaL

@@ -3,6 +3,7 @@ package org.backend.proyecto.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -10,11 +11,9 @@ import lombok.ToString;
 @Setter
 @ToString
 @Entity
+@NoArgsConstructor
 @Table(name = "producto")
 public class Producto {
-
-    public Producto(long l, String string, TipoProducto comida, double d) {
-    }
 
     // Identificador (ID) del producto.
     @Id
@@ -37,6 +36,13 @@ public class Producto {
 
     @Column(nullable = false)
     private double precio;
+
+    public Producto(int codigo, String nombre, TipoProducto tipo, double precio) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.tipo = tipo;
+        this.precio = precio;
+    }
 }
 
 /*

@@ -34,7 +34,6 @@ public class ProductoService {
 
     // Guarda un nuevo producto en la base de datos.
     public ProductoDTO saveProducto(CreateProductoDTO data) {
-        @SuppressWarnings("null")
         Producto entity = repository.save(mapper.toModel(data));
         return mapper.toDTO(entity);
     }

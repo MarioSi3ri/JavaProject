@@ -12,9 +12,6 @@ import lombok.Setter;
 @Table(name = "productos_por_pedido")
 public class ProductosPedido {
 
-    public ProductosPedido(long l, long m, int k, double d) {
-    }
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -34,4 +31,11 @@ public class ProductosPedido {
     // Sub total : cantidad * producto.precio
     @Column(name = "sub_total", nullable = false)
     private double subTotal;
+
+    public ProductosPedido(Pedido pedido, Producto producto, int cantidad, double subTotal) {
+        this.pedido = pedido;
+        this.producto = producto;
+        this.cantidad = cantidad;
+        this.subTotal = subTotal;
+    }
 }

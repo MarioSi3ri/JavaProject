@@ -1,4 +1,4 @@
-package org.proyecto.service;
+package org.backend.proyecto.service;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +18,7 @@ class ProductoRepositoryTest {
     void testSaveProducto() {
         // Guardar un Producto en la base de datos y luego recuperarlo.
         Producto producto = new Producto(1, "Producto1", TipoProducto.COMIDA, 10.0);
+        producto.setId(1L);
         productoRepository.save(producto);
 
         Producto result = productoRepository.findById(1L).orElse(null);

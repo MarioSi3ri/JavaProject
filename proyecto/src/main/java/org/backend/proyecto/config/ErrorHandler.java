@@ -20,13 +20,13 @@ public class ErrorHandler {
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ErrorDTO> validationError(MethodArgumentNotValidException ex) {
         List<FieldError> fieldErrors = ex.getBindingResult().getFieldErrors(); // Convierte los errores de validación en un objeto ErrorDTO y devuelve una respuesta HTTP 400 con algunos detalles sobre los errores de validación.
-        List<String> errors = fieldErrors.stream().map(x -> x.getDefaultMessage()).toList();
+        List<String> details = fieldErrors.stream().map(x -> x.getDefaultMessage()).toList();
 
 
         ErrorDTO errorDTO = new ErrorDTO(
                 "ERR_VALIDATION",
                 "Error de validación en los datos de entrada",
-                errors);
+                details);
 
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorDTO);
     }
