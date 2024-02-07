@@ -2,6 +2,8 @@ package org.backend.proyecto.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.DecimalMin;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.backend.proyecto.model.TipoProducto;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -9,6 +11,8 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class CreateProductoDTO {
     @Schema(description = "Codigo del producto", example = "12")
     @Min(1)

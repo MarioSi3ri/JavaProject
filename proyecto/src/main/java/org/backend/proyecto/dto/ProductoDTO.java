@@ -1,10 +1,14 @@
 package org.backend.proyecto.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.backend.proyecto.model.TipoProducto;
 import lombok.Data;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class ProductoDTO {
 
     @Schema(description = "Se ingresa el ID del producto", example = "3")

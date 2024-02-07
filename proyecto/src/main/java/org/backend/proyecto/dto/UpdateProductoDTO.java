@@ -1,10 +1,14 @@
 package org.backend.proyecto.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.backend.proyecto.model.TipoProducto;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class UpdateProductoDTO {
 
     @Schema(description = "Nombre actualizado del producto", example = "Sabritas Flamming Hot")
