@@ -39,7 +39,7 @@ class PedidoControllerTest {
     @Test
     void testCreatePedido() throws Exception {
         // Configuración del mock.
-        PedidoDTO pedidoDTO = new PedidoDTO();
+        PedidoDTO pedidoDTO = new PedidoDTO(1L, true, 0.0);
         when(pedidoService.createPedido()).thenReturn(pedidoDTO);
 
         // Solicitud HTTP POST al endpoint '/pedidos'.
