@@ -1,4 +1,4 @@
-package org.backend.proyecto.service;
+package org.backend.proyecto.repository;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

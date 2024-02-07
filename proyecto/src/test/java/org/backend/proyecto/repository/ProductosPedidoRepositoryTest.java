@@ -1,4 +1,4 @@
-package org.backend.proyecto.service;
+package org.backend.proyecto.repository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;

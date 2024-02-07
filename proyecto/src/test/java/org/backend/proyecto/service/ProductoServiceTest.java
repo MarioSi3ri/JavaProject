@@ -1,4 +1,4 @@
-package org.backend.proyecto.repository;
+package org.backend.proyecto.service;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

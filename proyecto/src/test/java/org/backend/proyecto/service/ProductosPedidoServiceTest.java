@@ -1,4 +1,4 @@
-package org.backend.proyecto.repository;
+package org.backend.proyecto.service;
 
 import org.backend.proyecto.dto.AddProductoDTO;
 import org.backend.proyecto.dto.ProductosPedidoDTO;
