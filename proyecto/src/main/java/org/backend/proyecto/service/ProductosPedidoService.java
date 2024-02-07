@@ -20,7 +20,7 @@ import java.util.List;
 public class ProductosPedidoService {
 
     @Autowired
-    private ProductosPedidoRepository productosPedidoRepository;
+    private ProductosPedidoRepository repository;
 
     @Autowired
     private ProductosPedidoMapper productosPedidoMapper;
@@ -39,8 +39,7 @@ public class ProductosPedidoService {
         double subTotal = producto.getPrecio() * dto.getCantidad();
 
         //Guarda la relación de producto y pedido en la db, tabla productos_por_pedido
-        @SuppressWarnings("null")
-        ProductosPedido productosPedido = productosPedidoRepository
+        ProductosPedido productosPedido = repository
                 .save(productosPedidoMapper.toModel(
                         pedido.getId(),
                         producto.getId(),
@@ -52,16 +51,16 @@ public class ProductosPedidoService {
 
     // Elimina un producto del pedido activo
     public void removeProducto(long id) throws ProductoNotFoundException {
-        if (!productosPedidoRepository.existsByProductoId(id)) throw new ProductoNotFoundException(id);
+        if (!repository.existsByProductoId(id)) throw new ProductoNotFoundException(id);
 
-        productosPedidoRepository.deleteByProductoId(id);
+        repository.deleteByProductoId(id);
     }
 
     // Desactiva el pedido actual, calcula el total y arroja un dto tipo ticket que muestra:
     // idPedido, total y una lista de los productos del pedido: nombre, cantida y precio
     public PedidoFinalDTO closePedido() throws PedidoNotFoundException {
         Pedido pedido = pedidoService.findActivo();
-        double total = productosPedidoRepository.findSumSubTotalByPedidoId(pedido.getId());
+        double total = repository.findSumSubTotalByPedidoId(pedido.getId());
 
         pedido.finalizar(total);
         return productosPedidoMapper.toPedidoFinalDto(pedido.getId(), total, getProductosPorPedido(pedido.getId()));
@@ -69,7 +68,7 @@ public class ProductosPedidoService {
 
     // Arroja una lista de los productos que forman parte de un pedido, que puede o no estar activo
     public List<ProductoFinalDTO> getProductosPorPedido(long id) throws PedidoNotFoundException {
-        List<ProductosPedido> productosPedidos = productosPedidoRepository.findByPedidoId(id)
+        List<ProductosPedido> productosPedidos = repository.findByPedidoId(id)
                 .orElseThrow(() -> new PedidoNotFoundException(id));
         return productosPedidoMapper.toProductoFinalDto(productosPedidos);
     }
