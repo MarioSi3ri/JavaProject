@@ -14,15 +14,5 @@ public class ProductosPedidoDTO {
     private int cantidad;
     @Schema(description = "Subtotal del pedido", example = "300")
     private double subTotal;
-    public Object getBody() {
-       
-        throw new UnsupportedOperationException("Unimplemented method 'getBody'");
-    }
-    public Object getStatusCode() {
-        
-        throw new UnsupportedOperationException("Unimplemented method 'getStatusCode'");
-    }
-    public Long getId() {
-        throw new UnsupportedOperationException("Unimplemented method 'getId'");
-    }
+
 }
