@@ -336,6 +336,10 @@ Para ejecutar el análisis configurado de SonarQube —requiere una instancia y 
 ./gradlew sonar
 ```
 
+<p align="center">
+<img src="https://github.com/user-attachments/assets/e27f2c3f-5c45-4699-a383-14f252ef8b43" alt="Banner del Perfil" />
+  </p>
+
 ---
 
 ## 🔄 Integración continua
