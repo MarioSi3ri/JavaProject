@@ -6,7 +6,7 @@
 [![SQLite](https://img.shields.io/badge/SQLite-Development-003B57?logo=sqlite&logoColor=white)](https://www.sqlite.org/)
 [![CI](https://github.com/MarioSi3ri/JavaProject/actions/workflows/continuous-integration.yml/badge.svg)](https://github.com/MarioSi3ri/JavaProject/actions/workflows/continuous-integration.yml)
 
-API REST desarrollada en Java para administrar productos, pedidos y la relación entre ambos. El proyecto pertenece al **Equipo 22** y está construido con Spring Boot, JPA/Hibernate y Gradle, incorporando validaciones, documentación OpenAPI y pruebas automatizadas.
+API REST desarrollada en Java para administrar productos, pedidos y la relación entre ambos. El proyecto pertenece al **Equipo 22para el proyecto final del programa "Diplomado en Full Stack Java" del Bootcamp impartido por Bedu y Santander Academy** y está construido con Spring Boot, JPA/Hibernate y Gradle, incorporando validaciones, documentación OpenAPI y pruebas automatizadas.
 
 > Proyecto académico: **Sistema de Gestión de Productos**.
 
@@ -336,6 +336,7 @@ Para ejecutar el análisis configurado de SonarQube —requiere una instancia y 
 ./gradlew sonar
 ```
 
+Imagen representativa de las pruebas aplicadas y el resultado:
 <p align="center">
 <img src="https://github.com/user-attachments/assets/e27f2c3f-5c45-4699-a383-14f252ef8b43" alt="Banner del Perfil" />
   </p>
@@ -413,7 +414,7 @@ Las contribuciones son bienvenidas. Para proponer cambios:
 
 ## 👥 Autores
 
-Proyecto desarrollado por el **Equipo 22**.
+Proyecto desarrollado por el **Equipo 22: [diefpt](https://github.com/diefpt), [Edsonortega](https://github.com/Edsonortega) & [AlxMeza](https://github.com/AlxMeza)**.
 
 Repositorio: [MarioSi3ri/JavaProject](https://github.com/MarioSi3ri/JavaProject)
 
