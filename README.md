@@ -422,4 +422,4 @@ Repositorio: [MarioSi3ri/JavaProject](https://github.com/MarioSi3ri/JavaProject)
 
 ## 📄 Licencia
 
-Actualmente, el repositorio no declara una licencia específica. Si el proyecto se distribuye públicamente, se recomienda definir una licencia de uso y contribución.
+Este proyecto se distribuye bajo la **Licencia MIT**. Consulta el archivo [LICENSE](LICENSE) para conocer los términos completos.
