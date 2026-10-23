@@ -6,7 +6,7 @@
 [![SQLite](https://img.shields.io/badge/SQLite-Development-003B57?logo=sqlite&logoColor=white)](https://www.sqlite.org/)
 [![CI](https://github.com/MarioSi3ri/JavaProject/actions/workflows/continuous-integration.yml/badge.svg)](https://github.com/MarioSi3ri/JavaProject/actions/workflows/continuous-integration.yml)
 
-API REST desarrollada en Java para administrar productos, pedidos y la relación entre ambos. El proyecto pertenece al **Equipo 22** para el proyecto final del programa "**Diplomado en Full Stack Java**" del Bootcamp impartido por **BEDU** y **Santander Academy** y está construido con Spring Boot, JPA/Hibernate y Gradle, incorporando validaciones, documentación OpenAPI y pruebas automatizadas.
+API REST desarrollada en Java para administrar productos, pedidos y la relación entre ambos. El proyecto pertenece al **Equipo 22** para el proyecto final del programa "**Diplomado en Full Stack Java**" del Bootcamp impartido por **BEDU** y **Santander Academy**. Está construido con Spring Boot, JPA/Hibernate y Gradle, incorporando validaciones, documentación OpenAPI y pruebas automatizadas.
 
 > Proyecto académico: **Sistema de Gestión de Productos**.
 
